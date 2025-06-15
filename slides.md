@@ -92,8 +92,6 @@ layout: default
 
 # 会社紹介
 
-<img src="/images/nextbeat.png" class="absolute top-16 right-16 h-16" alt="株式会社ネクストビート" />
-
 <div class="mb-6">
   <h2 class="text-2xl font-bold">株式会社ネクストビート <span class="text-base font-normal text-gray-600">(シルバースポンサー)</span></h2>
 </div>
