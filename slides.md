@@ -67,7 +67,7 @@ class: text-center
   <div class="flex items-center justify-center gap-4">
     <img src="/images/icon.png" class="w-20 h-20 rounded-full" />
     <div class="text-left">
-      <div class="text-xl font-bold">Tomoki Mizogami</div>
+      <div class="text-xl font-bold">Tomoki Mizogami（ともちんと呼んでください）</div>
       <div class="text-sm opacity-70">株式会社ネクストビート</div>
       <div class="text-sm opacity-70">Webエンジニア（Scala歴6年）、🔰PdM</div>
     </div>
@@ -82,8 +82,25 @@ class: text-center
   </ul>
   <div class="text-sm opacity-70 mt-6">
     <a href="https://x.com/taretmch" target="_blank" class="mr-4">@taretmch</a>
-    <a href="https://github.com/taretmch" target="_blank">GitHub</a>
+    <a href="https://github.com/taretmch/fp-matsuri-2025" target="_blank">資料データ / デモコード</a>
   </div>
+</div>
+
+<div class="absolute bottom-8 right-8 text-center">
+  <img src="/images/slides_qr.png" class="w-32 h-32" />
+  <p class="text-xs"><a href="https://criceta.com/fp-matsuri-2025" target="_blank">本日の資料</a></p>
+</div>
+
+---
+layout: default
+---
+
+# 関数型まつりのTシャツ買いましたか？
+
+QR チャンス！
+
+<div class="flex justify-center mt-8">
+  <img src="/images/fp_matsuri_t_shirt.png" class="h-96" />
 </div>
 
 ---
@@ -142,12 +159,32 @@ li {
 layout: center
 ---
 
-# 本日のテーマ
+# 何を話すのか
 
 <div class="text-center">
   <p style="text-align: left;">Web アプリケーションに関数型の考え方を取り入れ、<span v-mark.underline.red>型安全に</span>開発する</p>
   <p style="text-align: left;">そのための基本要素をご紹介します</p>
 </div>
+
+---
+layout: center
+---
+
+<div class="text-center">
+
+# なぜ話すのか
+
+- 昨年新規事業開発において、Scala 3 の関数型スタイルでの開発をやってみた
+- ドメインモデルの表現、ライブラリの組み合わせ方などの基本要素を抽出し、1つの事例として残したい
+- 最小限のコードを GitHub に公開しているので、初めてでも始めやすい状態にしている（はず）
+
+</div>
+
+<style>
+li {
+    text-align: left;
+}
+</style>
 
 ---
 layout: center
@@ -209,12 +246,6 @@ layout: default
 - Web API エンドポイントの型安全な定義
 
 </div>
-
-</div>
-
-<div class="text-center mt-6">
-
-**🎯 目標: 型安全な職員管理 API の完成**
 
 </div>
 
@@ -1492,7 +1523,7 @@ layout: default
   font-weight: 600;
   background: #fee2e2;
   color: #dc2626;
-  margin-left: 0 !important;
+  margin-left: auto;
 }
 
 .type-signature-item-wrapper {
@@ -1697,7 +1728,11 @@ layout: default
     <div v-click class="sub-steps">
       <div class="sub-step">
         <div>• イベント作成 (日付生成)</div>
-        <pre><code>def createEvent: Staff => F[Instant] => F[StaffEvent]</code></pre>
+        <pre><code>def now: => F[Instant]</code></pre>
+      </div>
+      <div class="sub-step">
+        <div>• イベント作成</div>
+        <pre><code>def createEvent: Staff => Instant => StaffEvent</code></pre>
       </div>
       <div class="sub-step">
         <div>• イベント発火</div>
@@ -3305,7 +3340,7 @@ layout: default
 
 # 依存関係の組み立て
 
-すべての実装のインスタンスを手動で組み立てるのは冗長になるため、MacWire などの DI ライブラリや部分適用を行う形で依存関係を組み立てることもできます (割愛)。
+関数型スタイルの DI ライブラリ、依存の部分適用など、より良い方法が他にもあります。
 
 ```scala
 // インフラストラクチャ層
@@ -3337,10 +3372,6 @@ layout: default
 # 動作確認
 
 <div class="api-demo">
-
-```scala
-scala-cli run samples/scripts/http4s_server.sc
-```
 
 <div class="demo-examples">
 <div class="example">
@@ -3484,7 +3515,7 @@ layout: default
 <li>ドメイン層（純粋な型・インターフェース）</li>
 <li>アプリケーション層（ユースケース）</li>
 <li>インフラ層（副作用の実装）</li>
-<li>プレゼンテーション層（Web API）</li>
+<li>エントリーポイント（Web API）</li>
 </ul>
 </div>
 
@@ -3579,6 +3610,8 @@ layout: default
   padding: 0.15rem 0;
   padding-left: 0.75rem;
   position: relative;
+  text-align: left;
+
 }
 
 .point li:before {
@@ -3723,7 +3756,7 @@ Scala / Java 向けのデファクトスタンダードな Web フレームワ�
 layout: default
 ---
 
-# エフェクトシステムの選択
+# 非同期ランタイムの選択
 
 ### Future
 - ✅ Scala 標準ライブラリに組み込み
