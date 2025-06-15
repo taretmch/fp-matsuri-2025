@@ -114,7 +114,7 @@ layout: default
 
 ---
 layout: image
-image: ./images/nextbeat_hub.png
+image: /images/nextbeat_hub.png
 backgroundSize: cover
 ---
 
@@ -126,7 +126,7 @@ backgroundSize: cover
   <li>関数型の話、大歓迎です</li>
 </ul>
 
-<img src="./images/nextbeat_hub_qr.png" style="position: absolute; bottom: 20px; right: 20px; width: 150px; height: 150px;" />
+<img src="/images/nextbeat_hub_qr.png" style="position: absolute; bottom: 20px; right: 20px; width: 150px; height: 150px;" />
 
 <style>
 h1 {
