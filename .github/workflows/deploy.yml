@@ -23,16 +23,17 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          node-version-file: ./.node-version
 
-      - name: Setup @antfu/ni
-        run: npm i -g @antfu/ni
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
       - name: Install dependencies
-        run: nci
+        run: bun install --frozen-lockfile
 
       - name: Build
-        run: nr build --base /${{github.event.repository.name}}/
+        run: bun build --base /${{github.event.repository.name}}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
