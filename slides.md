@@ -989,7 +989,7 @@ layout: default
 | 項目 | 制約 |
 |------|------|
 | **職員名** | 姓名それぞれ1文字以上32文字以下 |
-| **メールアドレス** | [WHATWG](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address) で定義された正規表現 |
+| **メールアドレス** | [WHATWG](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address) で定義された正規表現 (今回、バリデーションの具体は重要ではない) |
 | **ユーザー名** | 4文字以上16文字以下 |
 
 ---
@@ -3487,6 +3487,25 @@ curl -X POST http://localhost:8080/api/staffs \
   margin: 0;
 }
 </style>
+
+---
+layout: default
+---
+
+# 感想: 実際に業務に導入してみて
+
+- ドメインにおける型の表現、エラーハンドリングは有用
+- モックだとテストが非常に書きづらい。副作用を抽象化してユースケースを記述すると、テストしやすい
+- 常に最新 ver. にアップデートしておかないとすぐに古くなる
+- http4s, doobie は v0.x or v1.x-RC なので、不安定な状態で追従する必要あり
+- 設計思想を統一する必要があり (それはそう)、人員数の多いチームだと導入ハードルが高い
+
+<br>
+
+### お気持ち
+
+- DI コンテナなしでどうやって DI するんだ？となった
+- ラストマンシップ持って進める覚悟があれば導入ハードルは0になる
 
 ---
 layout: default
