@@ -1,0 +1,29 @@
+node_modules
+.DS_Store
+dist
+*.local
+.vite-inspect
+.remote-assets
+components.d.ts
+
+# Scala / scala-cli
+.scala-build/
+.bloop/
+.metals/
+target/
+.bsp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude
+.claude/settings.local.json
+
+# Log files
+*.log
+
+# Private
+images/nextbeat.png

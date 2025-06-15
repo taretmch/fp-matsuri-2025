@@ -1,0 +1,118 @@
+/* 統一的なスタイルシート */
+
+:root {
+  --primary-color: #1e293b;
+  --secondary-color: #3b82f6;
+  --background-color: #f8fafc;
+  --text-color: #334155;
+  --light-text-color: #64748b;
+  --border-color: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+
+/* 全体的な背景色 */
+.slidev-layout:not([class*="center"]) {
+  background-color: var(--background-color);
+}
+
+/* 見出しのスタイル統一 */
+h1 {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+h3 {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* 本文のスタイル */
+p, li {
+  color: var(--text-color);
+}
+
+/* リンクのスタイル */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* テーブルのスタイル統一 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem;
+  color: var(--text-color);
+}
+
+/* コードブロックの背景色 */
+pre {
+  background-color: var(--code-bg) !important;
+  border: 1px solid var(--border-color);
+}
+
+/* インラインコードのスタイル */
+code:not(pre code) {
+  background-color: var(--code-bg);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  color: var(--primary-color);
+  font-size: 0.875em;
+}
+
+/* カラフルなボックスを統一的なスタイルに */
+.bg-blue-50 {
+  background-color: var(--code-bg) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.bg-green-50 {
+  background-color: var(--code-bg) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.bg-purple-50 {
+  background-color: var(--code-bg) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.bg-orange-50 {
+  background-color: var(--code-bg) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* ボーダーカラーの統一 */
+.border-blue-200,
+.border-green-200,
+.border-purple-200,
+.border-orange-200 {
+  border-color: var(--border-color) !important;
+}
+
+/* テキストカラーの統一 */
+.text-blue-600,
+.text-blue-700 {
+  color: var(--secondary-color) !important;
+}
+
